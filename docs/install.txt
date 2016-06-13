@@ -1,13 +1,12 @@
 Requirement:
 ------------------------------------------------------------------------------------------------
 
-Operating System: Ubuntu 14.04
 Technology Stack: Apache, Mysql, PHP(5.5.9)
 Other Softwares : Composer
 PHP Libraries Used: guzzlehttp, phpunit
 
 
-Installation:
+Installation (Ubuntu):
 ------------------------------------------------------------------------------------------------
 1) First Install LAMP stack:
                Refer Link: https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu
