@@ -25,12 +25,17 @@ class ProductController extends RestController {
     }
     
     public function getGet() {
-        $product_id = mysql_real_escape_string($_GET['procuct_id']);
-        $sql = "SELECT * FROM prodcuts WHERE product_id=$product_id";
+        $product_id = (int) $_GET['product_id'];
+        $sql = "SELECT * FROM products WHERE product_id=$product_id";
         $product = mysql_fetch_assoc(mysql_query($sql)); 
         $this->response->setStatus(200);
-        $this->response->setMessage("Success");
-        $this->response->setData($product);
+        if($product !== false) {
+            $this->response->setMessage("Success");
+            $this->response->setData($product);
+        }
+        else {
+            $this->response->setMessage("invalid product id");
+        }
         $this->response->send();
     }
     

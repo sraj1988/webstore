@@ -11,8 +11,8 @@ abstract class RestController {
     abstract function actionPermission();
     
     public function authenticate($username, $password) {
-        $hashed_password = $password;
-        $query = "SELECT * FROM users where name='".mysql_real_escape_string($username)."' and password='".mysql_real_escape_string($hashed_password)."'";
+        $hashed_password = md5($password);
+        $query = "SELECT * FROM users where name='".mysql_real_escape_string($username)."' and password='".$hashed_password."'";
         return mysql_fetch_assoc(mysql_query($query));        
     }
     

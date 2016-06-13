@@ -10,7 +10,7 @@ class Response {
     private $data = array();
         
     public function setStatus($status) {
-        $this->status = 200;
+        $this->status = $status;
     }
     
     public function setMessage($msg) {
