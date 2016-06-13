@@ -110,13 +110,14 @@ class ProductController extends RestController {
     }
     
     public function putUpdate() {
+        $product_id = (int) $_GET['product_id'];
         $product = json_decode(file_get_contents("php://input"));
         $valid = $this->validateProduct($product);
         if($valid['status'] == true) {
             mysql_query("update products SET name='" . mysql_real_escape_string($product->name) . "', 
                     description='" . mysql_real_escape_string($product->description) . "', 
                     SKU='" . mysql_real_escape_string($product->sku) . "',
-                    price='" . mysql_real_escape_string($product->price) . "' WHERE product_id=$product->product_id");
+                    price='" . mysql_real_escape_string($product->price) . "' WHERE product_id=$product_id");
             $this->response->setStatus(200);
             if(mysql_affected_rows() > 0) {
                 $this->response->setMessage("product updated");

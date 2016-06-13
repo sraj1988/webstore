@@ -153,14 +153,14 @@ class productTest extends PHPUnit_Framework_TestCase {
         // Test 1 for update
         $response = $this->client->request('PUT','', [
             'query' => [
-                'dispatch' => 'product/update'
+                'dispatch' => 'product/update',
+                'product_id' => 4
             ],
             'json' => [
                 'name' => 'testProduct-' . $rand,
                 'description' => 'Product for testing',
                 'sku' => 'sku-testProduct-' . $rand,
-                'price' => $price,
-                'product_id' => 4
+                'price' => $price
             ],
             '_conditional' => ['username' => 'sonu1', 'password' => 123456]
         ]);
@@ -175,14 +175,14 @@ class productTest extends PHPUnit_Framework_TestCase {
         // Test 2
         $response = $this->client->request('PUT','', [
             'query' => [
-                'dispatch' => 'product/update'
+                'dispatch' => 'product/update',
+                'product_id' => 4
             ],
             'json' => [
                 'name' => 'testProduct-' . $rand,
                 'description' => 'Product for testing',
                 'sku' => 'sku-testProduct-' . $rand,
-                'price' => $price,
-                'product_id' => 4
+                'price' => $price
             ],
             '_conditional' => ['username' => 'sonu', 'password' => 123456]
         ]);
@@ -197,13 +197,13 @@ class productTest extends PHPUnit_Framework_TestCase {
         // Test 3 : sku missing
         $response = $this->client->request('PUT','', [
             'query' => [
-                'dispatch' => 'product/update'
+                'dispatch' => 'product/update',
+                'product_id' => 4
             ],
             'json' => [
                 'name' => 'testProduct-' . $rand,
                 'description' => 'Product for testing',
-                'price' => $price,
-                'product_id' => 4
+                'price' => $price
             ],
             '_conditional' => ['username' => 'sonu', 'password' => 123456]
         ]);
@@ -218,14 +218,14 @@ class productTest extends PHPUnit_Framework_TestCase {
         // Test 4 : invalid product id
         $response = $this->client->request('PUT','', [
             'query' => [
-                'dispatch' => 'product/update'
+                'dispatch' => 'product/update',
+                'product_id' => -1
             ],
             'json' => [
                 'name' => 'testProduct-' . $rand,
                 'description' => 'Product for testing',
                 'price' => $price,
-                'sku' => 'sku-testProduct-' . $rand,
-                'product_id' => -1
+                'sku' => 'sku-testProduct-' . $rand
             ],
             '_conditional' => ['username' => 'sonu', 'password' => 123456]
         ]);

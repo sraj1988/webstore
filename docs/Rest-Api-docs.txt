@@ -1,0 +1,177 @@
+
+End Point 1:
+---------------------------------------------------------------------------------------------------
+http://localhost/index.php?dispatch=product/list
+
+Description: Returns listing of all products
+Authentication Required : FALSE
+
+Request format:
+url : http://localhost/index.php?dispatch=product/list
+type: GET
+
+Reponse format: 
+{
+  "status": 200,
+  "message": "Success",
+  "data": [
+    {
+      "product_id": "1",
+      "name": "prod-4098",
+      "description": "test product description",
+      "SKU": "sku-prod-4098",
+      "price": "456.00"
+    },
+    {
+      "product_id": "2",
+      "name": "prod-1019",
+      "description": "test product description",
+      "SKU": "sku-prod-1019",
+      "price": "145.00"
+    },
+    {
+      "product_id": "3",
+      "name": "prod-126",
+      "description": "test product description",
+      "SKU": "sku-prod-126",
+      "price": "291.00"
+    },
+    {
+      "product_id": "4",
+      "name": "prod-3575",
+      "description": "test product description",
+      "SKU": "sku-prod-3575",
+     .
+     .
+     .
+     .
+     .
+  ]
+}
+
+
+
+
+End Point 2:
+---------------------------------------------------------------------------------------------------
+http://localhost/index.php?dispatch=product/search&name=some text&sku=some value
+
+Description: Return searched products based on product name and/or product sku
+Authentication Required : FALSE
+
+Request format:
+url : localhost/webstore/index.php?dispatch=product/search&name=20
+type: GET
+
+Reponse format: {
+  "status": 200,
+  "message": "Success",
+  "data": [
+    {
+      "product_id": "9",
+      "name": "prod-2024",
+      "description": "test product description",
+      "SKU": "sku-prod-2024",
+      "price": "271.00"
+    }
+  ]
+}
+
+End Point 3:
+---------------------------------------------------------------------------------------------------
+http://localhost/index.php?dispatch=product/get&product_id=some value
+
+Description: Return Details of a product in case of valid product id
+Authentication Required : TRUE
+
+Request format:
+url : http://localhost/index.php?dispatch=product/get&product_id=1
+type: GET
+header: username sonu
+	password 123456
+
+Reponse format: {
+  "status": 200,
+  "message": "Success",
+  "data": {
+    "product_id": "1",
+    "name": "prod-4098",
+    "description": "test product description",
+    "SKU": "sku-prod-4098",
+    "price": "456.00"
+  }
+}
+
+
+End Point 4:
+---------------------------------------------------------------------------------------------------
+http://localhost/index.php?dispatch=product/add
+
+Description: Adds Product
+Authentication Required : TRUE
+
+Request format:
+url : http://localhost/index.php?dispatch=product/add
+type: POST
+header: username sonu
+	password 123456
+RawJsonBody: {
+    "name": "firstprod",
+    "description": "this is the first product",
+    "sku": "123d",
+    "price": "100.00"
+}
+
+Reponse format: {
+  "status": 200,
+  "message": "product added",
+  "data": []
+}
+
+
+End Point 5:
+---------------------------------------------------------------------------------------------------
+http://localhost/index.php?dispatch=product/update&product_id=some value
+
+Description: Updates Product
+Authentication Required : TRUE
+
+Request format:
+url : http://localhost/index.php?dispatch=product/update&product_id=11
+type: POST
+header: username sonu
+	password 123456
+RawJsonBody: {
+    "name": "firstprod",
+    "description": "this is the first product",
+    "sku": "123d",
+    "price": "100.00"
+}
+
+Reponse format: {
+  "status": 200,
+  "message": "product updated",
+  "data": []
+}
+
+End Point 6:
+---------------------------------------------------------------------------------------------------
+http://localhost/index.php?dispatch=product/delete
+
+Description: Deletes Product
+Authentication Required : TRUE
+
+Request format:
+url : http://localhost/index.php?dispatch=product/delete
+type: DELETE
+header: username sonu
+	password 123456
+RawJsonBody: {
+    "product_id": "11"
+}
+
+Reponse format: {
+  "status": 200,
+  "message": "product deleted",
+  "data": []
+}

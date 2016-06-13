@@ -36,7 +36,7 @@ if (!$db_selected) {
                 KEY `email` (`email`)
               ) ENGINE=InnoDB DEFAULT CHARSET=latin1";
 
-    $queries[] = "INSERT INTO users SET name='sonu', email=sonu@gmail.com, password='" . md5('123456') . "'";
+    $queries[] = "INSERT INTO users SET name='sonu', email='sonu@gmail.com', password='" . md5(123456) . "'";
 
     for ($i = 1; $i <= 10; $i++) {
         $rand = rand(0, 5000);
