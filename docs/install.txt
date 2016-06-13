@@ -20,8 +20,17 @@ Installation (Ubuntu):
 
 4) clone Repository "https://github.com/sraj1988/webstore.git" into apache web root folder i;e /var/www/html.
 5) goto project home directory i;e webstore : cd /var/www/html/webstore
-6) Run Command : composer install
-7) From Browser hit url "http://localhost/webstore/install.php". This url will setup the required db and table.
+6) Run Command : composer install (make sure composed has the permission to create directory in webstore directory)
+7) Open config.php : an array will show up 
+$config['db'] = array(
+    'host' => 'localhost',
+    'name' => 'webstore',
+    'user' => 'root',
+    'password' => '');
+
+change the user and password for your mysql.
+
+8) From Browser hit url "http://localhost/webstore/install.php". This url will setup the required db and table.
 
 API is  ready for test from rest client.
 
