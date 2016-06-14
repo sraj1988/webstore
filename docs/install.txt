@@ -17,11 +17,12 @@ Installation (Ubuntu):
 
 3) install php curl: 
                 sudo apt-get install php5-curl
+4) goto project home directory i;e webstore : cd /var/www/html/webstore
+5) Run Command : composer install (make sure composer has the permission to create directory in webstore directory)
 
-4) clone Repository "https://github.com/sraj1988/webstore.git" into apache web root folder i;e /var/www/html.
-5) goto project home directory i;e webstore : cd /var/www/html/webstore
-6) Run Command : composer install (make sure composed has the permission to create directory in webstore directory)
-7) Open config.php : an array will show up 
+you can skip step 2,3,4,5 by simply executing install.sh: "sudo ./install.sh" From project home directory. Make sure install.sh is executible 
+
+6) Open config.php : an array will show up 
 $config['db'] = array(
     'host' => 'localhost',
     'name' => 'webstore',
@@ -30,7 +31,7 @@ $config['db'] = array(
 
 change the user and password for your mysql.
 
-8) From Browser hit url "http://localhost/webstore/install.php". This url will setup the required db and table.
+7) From Browser hit url "http://localhost/webstore/install.php" or From cli hit php install.php. This url will setup the required db and table.
 
 API is  ready for test From rest client.
 
