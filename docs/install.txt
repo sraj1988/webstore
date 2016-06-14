@@ -32,6 +32,6 @@ change the user and password for your mysql.
 
 8) From Browser hit url "http://localhost/webstore/install.php". This url will setup the required db and table.
 
-API is  ready for test from rest client.
+API is  ready for test From rest client.
 
 

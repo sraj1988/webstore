@@ -1,0 +1,4 @@
+Follwing tables have been used
+
+1) products (product_id, name, description, sku, price)
+2) users (uid, name, email, password)
